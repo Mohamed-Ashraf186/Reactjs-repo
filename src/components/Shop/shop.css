@@ -1,0 +1,11 @@
+.prod-wrap img {
+  width: 100px;
+}
+.prod-wrap {
+  width: 25%;
+}
+.parent {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
