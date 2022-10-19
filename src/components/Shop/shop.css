@@ -25,3 +25,8 @@
   width: auto;
   border-radius: 10px;
 }
+
+.add-to-cart:hover{
+  background-color: black;
+  color:white;
+}

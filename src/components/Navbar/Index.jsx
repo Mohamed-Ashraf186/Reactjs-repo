@@ -27,8 +27,10 @@ const Navbar = () => {
         </li>
 
         <li>
-          CART
+          <Link to="/Cart">Cart</Link>
         </li>
+        
+
       </ul>
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import { Link } from "react-router-dom";
 import "./shop.css";
 import { addToCart } from "../../redux/cartSlice";
@@ -7,18 +7,20 @@ import { addToCart } from "../../redux/cartSlice";
 
 const Shop = () => {
 
-  const dispatch=useDispatch();
-
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProducts();
   }, []);
 
 
-  const handleAddToCart=()=>{
-    dispatch(addToCart())
+  const dispatch=useDispatch();
+
+
+  const handleAddToCart=(prod)=>{
+    dispatch(addToCart(prod))
   }
+
+  const global=useSelector(store=>store.cartStore)
 
   const getProducts = () => {
     fetch("https://fakestoreapi.com/products")
@@ -40,7 +42,7 @@ const Shop = () => {
             <h4>{product.title}</h4>
             <h5>{product.price}</h5>
           </Link>
-            <button className="add-to-cart"> Add to cart</button>
+            <button onClick={()=>handleAddToCart(product)} type="button" className="add-to-cart"> Add to cart</button>
           </div>
 
         );
