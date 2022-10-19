@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar/Index";
 import Details from "./components/Shop/Details";
 import Shop from "./components/Shop/Index";
 import Cart from "./components/Cart";
+import Singup from "./components/signUp/signUp";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/counter" element={<CounterAction />} />
         <Route path="/shop/:id" element={<Details />} />
         <Route path="/Cart/" element={<Cart/>} />
+        <Route path="/signup" element={<Singup />} />
       </Routes>
     </BrowserRouter>
   );

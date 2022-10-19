@@ -30,6 +30,11 @@ const Navbar = () => {
           <Link to="/Cart">Cart</Link>
         </li>
         
+        
+        <li>
+          <Link to="/signup">Sign up</Link>
+        </li>
+        
 
       </ul>
     </div>
