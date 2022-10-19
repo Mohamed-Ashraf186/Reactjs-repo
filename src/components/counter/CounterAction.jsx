@@ -1,13 +1,31 @@
 import { useState } from "react";
 import Counter from "./Counter";
+import {useSelector, useDispatch} from 'react-redux';
+import {incrementCount,decrementCount} from '../../redux/counterSlice';
+
+
 
 function CounterAction() {
-  const [count, setCount] = useState(0);
-  const increment = () => setCount(count + 1);
-  const decrrement = () => (count <= 0 ? "" : setCount(count - 1));
+  const counterGlobalValue= useSelector(state=>state.counterStore.counter)
+
+  const dispatch=useDispatch();
+
+  const increment = () => {
+    dispatch( incrementCount(10))
+  };
+
+
+  const decrrement = () => {
+    dispatch( decrementCount(5))
+
+  };
+
+
+
+
   return (
     <div>
-      <Counter count={count} increment={increment} decrrement={decrrement} />
+      <Counter count={counterGlobalValue} increment={increment} decrrement={decrrement} />
     </div>
   );
 }

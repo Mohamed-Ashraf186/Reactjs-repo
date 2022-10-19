@@ -1,6 +1,14 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import {useSelector} from 'react-redux'
+
+
 const Navbar = () => {
+
+  const cartList=useSelector(store=>store.cartStore.cartList)
+  const cartCount=useSelector(store=>store.cartStore.cartCount)
+
+
   return (
     <div className="nav-wrapper ">
       <h3>logo</h3>
@@ -16,6 +24,10 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/counter">Counter</Link>
+        </li>
+
+        <li>
+          CART
         </li>
       </ul>
     </div>
