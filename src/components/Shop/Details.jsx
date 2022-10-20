@@ -28,14 +28,14 @@ const Details = () => {
 
   const [product, setProduct] = useState({});
   return (
-    <div className="product d-flex justify-content-around">
+    <div className="product">
       <div className=" w-50 h-50">
         <img style={{ width: "250px" }} src={product.image} alt="" />
       </div>
       <div>
         <h4>{product.title}</h4>
         <h5>{product.price}</h5>
-        <div className=" d-flex flex-column">
+        <div className=" details-cart">
           <button 
           onClick={()=>handelAddToCart(product)}
           type="button" > Add to cart</button>

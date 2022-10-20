@@ -1,0 +1,15 @@
+.about{
+    text-align: center;
+}
+
+
+.about h3{
+    font-size: 45px;
+    text-transform: uppercase;
+}
+
+.about p{
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+}
